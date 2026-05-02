@@ -39,10 +39,10 @@ function updateArtistImage() {
     const urlParams = new URLSearchParams(window.location.search);
     const artistId = urlParams.get('id');
     
-    // بيانات الفنانين مع روابطهم
+    // بيانات الفنانين مع روابطهم وصورهم
     const artistsData = {
         "1": {
-            image: "images/artists/mostafa.jpg",
+            image: "images/artists/mostafazyan.jpg",
             facebook: "https://facebook.com/mostafa",
             instagram: "https://instagram.com/mostafa",
             tiktok: "https://tiktok.com/@mostafa",
@@ -57,39 +57,42 @@ function updateArtistImage() {
             youtube: "https://youtube.com/ibrahim",
             linktree: "https://linktr.ee/ZAHRAOUIPROD"
         }
-        // أضف البقية هنا...
+        // أضف البقية هنا بنفس التنسيق...
     };
 
     const artist = artistsData[artistId];
-    if (artist) {
-        // تحديث الصورة
-        const imgElement = document.getElementById('artist-main-img');
-        if (imgElement) imgElement.src = artist.image;
-
-        // تحديث الروابط
-        if(artist.facebook) document.getElementById('link-facebook').href = artist.facebook;
-        if(artist.instagram) document.getElementById('link-instagram').href = artist.instagram;
-        if(artist.tiktok) document.getElementById('link-tiktok').href = artist.tiktok;
-        if(artist.youtube) document.getElementById('link-youtube').href = artist.youtube;
-        if(artist.linktree) document.getElementById('link-works').href = artist.linktree;
-    }
-}
-
     const imgElement = document.getElementById('artist-main-img');
     const fallbackIcon = document.getElementById('fallback-icon');
 
-    // إذا وجدنا العنصر والـ ID، نقوم بتحديث الصورة
-    if (imgElement && artistId && artistImages[artistId]) {
-        imgElement.src = artistImages[artistId];
+    if (artist && imgElement) {
+        // تحديد مصدر الصورة
+        imgElement.src = artist.image;
+
+        // منطق إظهار الصورة أو الميكروفون
         imgElement.onload = function() {
             imgElement.style.display = 'block';
             if (fallbackIcon) fallbackIcon.style.display = 'none';
         };
-        // في حالة وجود خطأ في تحميل الصورة (مثلاً الاسم خطأ) يظهر الميكروفون
+
         imgElement.onerror = function() {
             imgElement.style.display = 'none';
             if (fallbackIcon) fallbackIcon.style.display = 'block';
         };
+
+        // تحديث الروابط الاجتماعية
+        updateSocialLink('link-facebook', artist.facebook);
+        updateSocialLink('link-instagram', artist.instagram);
+        updateSocialLink('link-tiktok', artist.tiktok);
+        updateSocialLink('link-youtube', artist.youtube);
+        updateSocialLink('link-works', artist.linktree);
+    }
+}
+
+// دالة مساعدة لتحديث الروابط لتجنب الأخطاء
+function updateSocialLink(id, url) {
+    const element = document.getElementById(id);
+    if (element && url) {
+        element.href = url;
     }
 }
 
@@ -128,8 +131,6 @@ function handleFormSubmit(e) {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }, 2000);
-
-        console.log('Form submitted:', { name, email, subject, message });
     }
 }
 
