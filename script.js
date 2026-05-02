@@ -24,12 +24,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set active link based on current page
     setActiveNavLink();
 
+    // تشغيل وظيفة تحديث صورة الفنان إذا كنا في صفحة التفاصيل
+    updateArtistImage();
+
     // Form submission
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', handleFormSubmit);
     }
 });
+
+// وظيفة تحديث صورة الفنان ديناميكياً
+function updateArtistImage() {
+    // الحصول على ID الفنان من الرابط (مثلاً id=8)
+    const urlParams = new URLSearchParams(window.location.search);
+    const artistId = urlParams.get('id');
+    
+    // قائمة مسارات الصور (تأكد من وجود المجلد والصور في GitHub بنفس الأسماء)
+    const artistImages = {
+        "1": "images/artists/mostafa.jpg",
+        "2": "images/artists/ahmed.jpg",
+        "3": "images/artists/layla.jpg",
+        "4": "images/artists/mohammed.jpg",
+        "5": "images/artists/fatima.jpg",
+        "6": "images/artists/ali.jpg",
+        "7": "images/artists/sara.jpg",
+        "8": "images/artists/ibrahim.jpg"
+    };
+
+    const imgElement = document.getElementById('artist-main-img');
+    const fallbackIcon = document.getElementById('fallback-icon');
+
+    // إذا وجدنا العنصر والـ ID، نقوم بتحديث الصورة
+    if (imgElement && artistId && artistImages[artistId]) {
+        imgElement.src = artistImages[artistId];
+        imgElement.onload = function() {
+            imgElement.style.display = 'block';
+            if (fallbackIcon) fallbackIcon.style.display = 'none';
+        };
+        // في حالة وجود خطأ في تحميل الصورة (مثلاً الاسم خطأ) يظهر الميكروفون
+        imgElement.onerror = function() {
+            imgElement.style.display = 'none';
+            if (fallbackIcon) fallbackIcon.style.display = 'block';
+        };
+    }
+}
 
 // Set active navigation link
 function setActiveNavLink() {
@@ -56,20 +95,17 @@ function handleFormSubmit(e) {
     const message = document.querySelector('textarea[name="message"]').value;
 
     if (name && email && subject && message) {
-        // Show success message
         const submitBtn = document.querySelector('.contact-form button');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'تم الإرسال!';
         submitBtn.disabled = true;
 
-        // Reset form
         setTimeout(() => {
             document.querySelector('.contact-form').reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }, 2000);
 
-        // Log form data (in production, send to server)
         console.log('Form submitted:', { name, email, subject, message });
     }
 }
@@ -100,7 +136,6 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe cards and sections
 document.querySelectorAll('.card, section').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
