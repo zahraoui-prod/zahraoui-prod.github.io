@@ -59,27 +59,28 @@ function updateArtistImage() {
         }
         // أضف البقية هنا بنفس التنسيق...
     };
+// --- هذا هو الجزء الذي أضفناه لتحديث النصوص ---
+    if (artist) {
+        if (document.getElementById('artist-name')) document.getElementById('artist-name').textContent = artist.name;
+        if (document.getElementById('artist-genre')) document.getElementById('artist-genre').textContent = artist.genre;
+        if (document.getElementById('artist-description')) document.getElementById('artist-description').textContent = artist.description;
+        
+        // --- تكملة الكود الخاص بالصورة والروابط الذي كان عندك ---
+        const imgElement = document.getElementById('artist-main-img');
+        const fallbackIcon = document.getElementById('fallback-icon');
 
-    const artist = artistsData[artistId];
-    const imgElement = document.getElementById('artist-main-img');
-    const fallbackIcon = document.getElementById('fallback-icon');
+        if (imgElement) {
+            imgElement.src = artist.image;
+            imgElement.onload = function() {
+                imgElement.style.display = 'block';
+                if (fallbackIcon) fallbackIcon.style.display = 'none';
+            };
+            imgElement.onerror = function() {
+                imgElement.style.display = 'none';
+                if (fallbackIcon) fallbackIcon.style.display = 'block';
+            };
+        }
 
-    if (artist && imgElement) {
-        // تحديد مصدر الصورة
-        imgElement.src = artist.image;
-
-        // منطق إظهار الصورة أو الميكروفون
-        imgElement.onload = function() {
-            imgElement.style.display = 'block';
-            if (fallbackIcon) fallbackIcon.style.display = 'none';
-        };
-
-        imgElement.onerror = function() {
-            imgElement.style.display = 'none';
-            if (fallbackIcon) fallbackIcon.style.display = 'block';
-        };
-
-        // تحديث الروابط الاجتماعية
         updateSocialLink('link-facebook', artist.facebook);
         updateSocialLink('link-instagram', artist.instagram);
         updateSocialLink('link-tiktok', artist.tiktok);
