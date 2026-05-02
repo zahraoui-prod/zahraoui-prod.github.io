@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الفنان - ZAHRAOUI PROD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-box {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #00d4ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            color: #00d4ff;
+            font-size: 12px;
+        }
+
+        .navbar-logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            color: #00d4ff;
+            font-size: 18px;
+            letter-spacing: 0.1em;
+        }
+
+        .navbar-logo p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            color: rgba(0, 212, 255, 0.7);
+            margin-top: -5px;
+        }
+
+        .navbar-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #00d4ff;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .back-link:hover {
+            color: #00a8cc;
+        }
+
+        .artist-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        .artist-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(0, 212, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artist-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+        }
+
+        .artist-info h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .artist-genre {
+            font-family: 'Orbitron', sans-serif;
+            color: #00d4ff;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .artist-description {
+            color: #a0a0a0;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .artist-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            padding: 1.5rem;
+            text-align: center;
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(0, 212, 255, 0.7);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .works-section {
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        .section-title span {
+            color: #00d4ff;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            background: rgba(26, 26, 46, 0.5);
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            border-color: rgba(0, 212, 255, 0.6);
+            background: rgba(26, 26, 46, 0.8);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .work-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-date {
+            font-size: 12px;
+            color: rgba(0, 212, 255, 0.7);
+        }
+
+        .footer {
+            background: #000000;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            color: #808080;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .artist-header {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .artist-info h1 {
+                font-size: 32px;
+            }
+
+            .artist-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <div class="logo-box">ZP</div>
+                <div>
+                    <h1>ZAHRAOUI</h1>
+                    <p>PROD</p>
+                </div>
+            </div>
+            <div class="navbar-links">
+                <a href="/">الرئيسية</a>
+                <a href="/#artists">الفنانون</a>
+                <a href="/#works">الأعمال</a>
+                <a href="/#contact">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <a href="/" class="back-link">← العودة للرئيسية</a>
+
+        <!-- Artist Header -->
+        <div class="artist-header">
+            <div class="artist-image">
+                صورة الفنان
+            </div>
+            <div class="artist-info">
+                <h1 id="artistName">مصطفى زيان</h1>
+                <div class="artist-genre" id="artistGenre">موسيقى عربية معاصرة</div>
+                <p class="artist-description" id="artistDescription">
+                    فنان موهوب متخصص في دمج الأصوات التقليدية مع الإيقاعات الحديثة. يتمتع بخبرة واسعة في الموسيقى والإنتاج الموسيقي، ويعمل مع ZAHRAOUI PROD لتوزيع أعماله على المستوى العالمي.
+                </p>
+
+                <div class="artist-stats">
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">أغنية</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2M+</div>
+                        <div class="stat-label">مستمع</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">دول</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Works Section -->
+        <div class="works-section">
+            <h2 class="section-title">أحدث <span>الأعمال</span></h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-title">موسيقى الروح</div>
+                    <div class="work-date">2024</div>
+                </div>
+                <div class="work-card">
+                    <div class="work-title">ليل المغرب</div>
+                    <div class="work-date">2024</div>
+                </div>
+                <div class="work-card">
+                    <div class="work-title">أحلام الشرق</div>
+                    <div class="work-date">2023</div>
+                </div>
+                <div class="work-card">
+                    <div class="work-title">صوت القلب</div>
+                    <div class="work-date">2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 ZAHRAOUI PROD. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // Get artist ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const artistId = urlParams.get('id') || '1';
+
+        // Artist data
+        const artists = {
+            1: {
+                name: "مصطفى زيان",
+                genre: "موسيقى عربية معاصرة",
+                description: "فنان موهوب متخصص في دمج الأصوات التقليدية مع الإيقاعات الحديثة. يتمتع بخبرة واسعة في الموسيقى والإنتاج الموسيقي، ويعمل مع ZAHRAOUI PROD لتوزيع أعماله على المستوى العالمي.",
+            },
+            2: {
+                name: "أحمد شروق",
+                genre: "راب و هيب هوب",
+                description: "مغني ومنتج موسيقي متميز يجمع بين الكلمات القوية والألحان الجذابة. متخصص في إنتاج موسيقى الراب والهيب هوب بأسلوب مميز يعكس الواقع الاجتماعي.",
+            },
+            3: {
+                name: "ليلى الأطلسية",
+                genre: "موسيقى إلكترونية",
+                description: "منتجة موسيقية رائدة في مجال الموسيقى الإلكترونية بالمغرب. تجمع بين التكنولوجيا والإبداع لإنتاج موسيقى فريدة وجذابة.",
+            },
+            4: {
+                name: "محمد الصحراوي",
+                genre: "موسيقى تقليدية",
+                description: "عازف عود وموسيقار متخصص في الموسيقى التقليدية المغربية. يحافظ على التراث الموسيقي الأصيل مع إضافة لمسات عصرية.",
+            },
+        };
+
+        const artist = artists[artistId] || artists[1];
+
+        document.getElementById('artistName').textContent = artist.name;
+        document.getElementById('artistGenre').textContent = artist.genre;
+        document.getElementById('artistDescription').textContent = artist.description;
+    </script>
+</body>
+</html>
