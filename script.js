@@ -36,21 +36,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // وظيفة تحديث صورة الفنان ديناميكياً
 function updateArtistImage() {
-    // الحصول على ID الفنان من الرابط (مثلاً id=8)
     const urlParams = new URLSearchParams(window.location.search);
     const artistId = urlParams.get('id');
     
-    // قائمة مسارات الصور (تأكد من وجود المجلد والصور في GitHub بنفس الأسماء)
-    const artistImages = {
-        "1": "images/artists/mostafazyan.jpg",
-        "2": "images/artists/ahmed.jpg",
-        "3": "images/artists/layla.jpg",
-        "4": "images/artists/mohammed.jpg",
-        "5": "images/artists/fatima.jpg",
-        "6": "images/artists/ali.jpg",
-        "7": "images/artists/sara.jpg",
-        "8": "images/artists/ibrahim.jpg"
+    // بيانات الفنانين مع روابطهم
+    const artistsData = {
+        "1": {
+            image: "images/artists/mostafa.jpg",
+            facebook: "https://facebook.com/mostafa",
+            instagram: "https://instagram.com/mostafa",
+            tiktok: "https://tiktok.com/@mostafa",
+            youtube: "https://youtube.com/mostafa",
+            linktree: "https://linktr.ee/mostafa-works"
+        },
+        "8": {
+            image: "images/artists/ibrahim.jpg",
+            facebook: "https://facebook.com/ibrahim",
+            instagram: "https://instagram.com/ibrahim",
+            tiktok: "https://tiktok.com/@ibrahim",
+            youtube: "https://youtube.com/ibrahim",
+            linktree: "https://linktr.ee/ZAHRAOUIPROD"
+        }
+        // أضف البقية هنا...
     };
+
+    const artist = artistsData[artistId];
+    if (artist) {
+        // تحديث الصورة
+        const imgElement = document.getElementById('artist-main-img');
+        if (imgElement) imgElement.src = artist.image;
+
+        // تحديث الروابط
+        if(artist.facebook) document.getElementById('link-facebook').href = artist.facebook;
+        if(artist.instagram) document.getElementById('link-instagram').href = artist.instagram;
+        if(artist.tiktok) document.getElementById('link-tiktok').href = artist.tiktok;
+        if(artist.youtube) document.getElementById('link-youtube').href = artist.youtube;
+        if(artist.linktree) document.getElementById('link-works').href = artist.linktree;
+    }
+}
 
     const imgElement = document.getElementById('artist-main-img');
     const fallbackIcon = document.getElementById('fallback-icon');
