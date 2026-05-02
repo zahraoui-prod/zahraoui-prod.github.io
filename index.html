@@ -23,10 +23,16 @@
                 </div>
             </a>
             <div class="navbar-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="artists.html">الفنانون</a>
-                <a href="works.html">الأعمال</a>
-                <a href="contact.html">تواصل معنا</a>
+                <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+                <a href="artists.html" data-i18n="nav.artists">الفنانون</a>
+                <a href="works.html" data-i18n="nav.works">الأعمال</a>
+                <a href="contact.html" data-i18n="nav.contact">تواصل معنا</a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="ar">العربية</button>
+                <button class="lang-btn" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="es">Español</button>
+                <button class="lang-btn" data-lang="fr">Français</button>
             </div>
             <button class="mobile-menu-btn">☰</button>
         </div>
@@ -41,7 +47,7 @@
                 <div class="hero-accent-line"></div>
             </div>
 
-            <h1>
+            <h1 data-i18n="hero.title">
                 حماية و توزيع
                 <br>
                 <span class="highlight">الفن المغربي</span>
@@ -49,100 +55,137 @@
                 للعالم
             </h1>
 
-            <p>توفر ZAHRAOUI PROD خدمات احترافية لإدارة الحقوق والتوزيع العالمي للمواهب المغربية الرائدة</p>
+            <p data-i18n="hero.subtitle">توفر ZAHRAOUI PROD خدمات احترافية لإدارة الحقوق والتوزيع العالمي للمواهب المغربية الرائدة</p>
 
             <div class="hero-buttons">
                 <a href="artists.html" class="btn btn-primary">استكشف الفنانين</a>
                 <a href="contact.html" class="btn">تواصل معنا</a>
             </div>
+
+            <div class="hero-scroll">↓ اكتشف المزيد ↓</div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section-darker">
+    <!-- Artists Section -->
+    <section class="section-darker" id="artists">
         <div class="container">
             <div class="section-header">
-                <h2>خدماتنا <span class="highlight">المتميزة</span></h2>
-                <p>نقدم حلولاً متكاملة لتوزيع الموسيقى وإدارة الحقوق الرقمية</p>
+                <h2 data-i18n="section.artists">الفنانون المميزون</h2>
+                <p data-i18n="section.artists.desc">اكتشف مواهب مغربية متنوعة تحت رعاية ZAHRAOUI PROD</p>
+            </div>
+
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ff0055 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎤</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">مصطفى زيان</h3>
+                        <p class="card-subtitle">موسيقى عربية معاصرة</p>
+                        <p class="card-description">فنان موهوب متخصص في دمج الأصوات التقليدية مع الإيقاعات الحديثة</p>
+                        <a href="artiste.html?id=1" class="card-link" data-i18n="discover">اكتشف أكثر →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #1a0033 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎧</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">أحمد شروق</h3>
+                        <p class="card-subtitle">راب و هيب هوب</p>
+                        <p class="card-description">مغني ومنتج موسيقي متميز يجمع بين الكلمات القوية والألحان الجذابة</p>
+                        <a href="artiste.html?id=2" class="card-link" data-i18n="discover">اكتشف أكثر →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00a8cc 0%, #1a0033 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎹</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">ليلى الأطلسية</h3>
+                        <p class="card-subtitle">موسيقى إلكترونية</p>
+                        <p class="card-description">منتجة موسيقية رائدة في مجال الموسيقى الإلكترونية بالمغرب</p>
+                        <a href="artiste.html?id=3" class="card-link" data-i18n="discover">اكتشف أكثر →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #0080ff 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎸</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">محمد الصحراوي</h3>
+                        <p class="card-subtitle">موسيقى تقليدية</p>
+                        <p class="card-description">عازف عود وموسيقار متخصص في الموسيقى التقليدية المغربية</p>
+                        <a href="artiste.html" class="card-link" data-i18n="discover">اكتشف أكثر →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="artists.html" class="btn btn-primary">عرض جميع الفنانين</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="section-dark" id="works">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="section.works">معرض الأعمال</h2>
+                <p data-i18n="section.works.desc">استكشف مجموعة مختارة من أفضل الأعمال الموسيقية المُدارة بواسطة ZAHRAOUI PROD</p>
             </div>
 
             <div class="grid grid-3">
                 <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00d4ff 0%, #1a0033 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎵</span>
+                    </div>
                     <div class="card-content">
-                        <h3 class="card-title">التوزيع الموسيقي</h3>
-                        <p class="card-description">توزيع احترافي لأعمالك على جميع منصات البث الموسيقية العالمية</p>
+                        <h3 class="card-title">موسيقى الروح</h3>
+                        <p class="card-subtitle">مصطفى زيان</p>
+                        <p class="card-description">أغنية عاطفية تجمع بين الأصوات التقليدية والحديثة</p>
                     </div>
                 </div>
 
                 <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #1a0033 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎤</span>
+                    </div>
                     <div class="card-content">
-                        <h3 class="card-title">إدارة الحقوق</h3>
-                        <p class="card-description">حماية شاملة لحقوقك الفكرية والرقمية مع متابعة مستمرة</p>
+                        <h3 class="card-title">صوت المدينة</h3>
+                        <p class="card-subtitle">أحمد شروق</p>
+                        <p class="card-description">أغنية راب قوية تعبر عن حياة المدينة</p>
                     </div>
                 </div>
 
                 <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00a8cc 0%, #1a0033 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎧</span>
+                    </div>
                     <div class="card-content">
-                        <h3 class="card-title">YouTube Content ID</h3>
-                        <p class="card-description">إدارة محتوى YouTube وتحقيق الإيرادات من الفيديوهات</p>
+                        <h3 class="card-title">أحلام رقمية</h3>
+                        <p class="card-subtitle">ليلى الأطلسية</p>
+                        <p class="card-description">موسيقى إلكترونية حديثة وجذابة</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">التمثيل القانوني</h3>
-                        <p class="card-description">تمثيل قانوني متخصص لحماية مصالح الفنانين</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">التحليلات والإحصائيات</h3>
-                        <p class="card-description">تقارير مفصلة عن أداء أعمالك وإحصائيات المستمعين</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">الدعم المتخصص</h3>
-                        <p class="card-description">فريق دعم متخصص متاح لمساعدتك في كل خطوة</p>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="works.html" class="btn btn-primary">عرض جميع الأعمال</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2>عن <span class="highlight">ZAHRAOUI PROD</span></h2>
-                <p>علامة تجارية رائدة في مجال التوزيع الموسيقي والحقوق الرقمية</p>
-            </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="card">
-                    <div class="card-content">
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #a0a0a0;">
-                            ZAHRAOUI PROD هي علامة تجارية متخصصة في توزيع الموسيقى وإدارة الحقوق الرقمية للمواهب المغربية. 
-                            نعمل على توفير خدمات احترافية وشاملة لضمان وصول أعمال الفنانين إلى الجمهور العالمي.
-                        </p>
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #a0a0a0; margin-top: 1rem;">
-                            مع فريق متخصص وخبرة واسعة في المجال، نحن ملتزمون بدعم الفنانين المغاربة وتمكينهم من تحقيق أحلامهم الموسيقية.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
+    <!-- Contact CTA Section -->
     <section class="section-darker">
         <div class="container">
             <div style="text-align: center; padding: 3rem 0;">
-                <h2 style="margin-bottom: 1.5rem;">هل أنت فنان؟</h2>
+                <h2 style="margin-bottom: 1.5rem;">هل لديك عمل موسيقي؟</h2>
                 <p style="color: #a0a0a0; font-size: 1.1rem; margin-bottom: 2rem;">
-                    انضم إلى مئات الفنانين المغاربة الذين يثقون بـ ZAHRAOUI PROD
+                    شارك أعمالك معنا وسنساعدك على الوصول للعالم
                 </p>
                 <a href="contact.html" class="btn btn-primary">ابدأ الآن</a>
             </div>
@@ -154,24 +197,24 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>عن الموقع</h3>
-                    <p style="color: #a0a0a0; font-size: 14px;">
+                    <h3 data-i18n="footer.about">عن الموقع</h3>
+                    <p style="color: #a0a0a0; font-size: 14px;" data-i18n="footer.about.text">
                         ZAHRAOUI PROD توفر خدمات احترافية لتوزيع الموسيقى وإدارة الحقوق الرقمية للمواهب المغربية.
                     </p>
                 </div>
 
                 <div class="footer-section">
-                    <h3>روابط سريعة</h3>
+                    <h3 data-i18n="footer.quick">روابط سريعة</h3>
                     <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="artists.html">الفنانون</a></li>
-                        <li><a href="works.html">الأعمال</a></li>
-                        <li><a href="contact.html">تواصل معنا</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+                        <li><a href="artists.html" data-i18n="nav.artists">الفنانون</a></li>
+                        <li><a href="works.html" data-i18n="nav.works">الأعمال</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">تواصل معنا</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>الخدمات</h3>
+                    <h3 data-i18n="footer.services">الخدمات</h3>
                     <ul>
                         <li><a href="#">التوزيع الموسيقي</a></li>
                         <li><a href="#">إدارة الحقوق</a></li>
@@ -181,7 +224,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h3>تواصل</h3>
+                    <h3 data-i18n="footer.contact">تواصل</h3>
                     <ul>
                         <li><a href="mailto:info@zahraoui-prod.com">info@zahraoui-prod.com</a></li>
                         <li><a href="tel:+212">+212 (0) 5XX-XXXXXX</a></li>
@@ -193,7 +236,7 @@
             <div class="footer-divider"></div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2024 ZAHRAOUI PROD. جميع الحقوق محفوظة.</p>
+                <p class="footer-copyright" data-i18n="footer.copyright">© 2024 ZAHRAOUI PROD. جميع الحقوق محفوظة.</p>
                 <div class="footer-links">
                     <a href="#">سياسة الخصوصية</a>
                     <a href="#">شروط الاستخدام</a>
