@@ -42,7 +42,7 @@ function updateArtistImage() {
     
     // قائمة مسارات الصور (تأكد من وجود المجلد والصور في GitHub بنفس الأسماء)
     const artistImages = {
-        "1": "images/artists/mostafa.jpg",
+        "1": "images/artists/mostafazyan.jpg",
         "2": "images/artists/ahmed.jpg",
         "3": "images/artists/layla.jpg",
         "4": "images/artists/mohammed.jpg",
