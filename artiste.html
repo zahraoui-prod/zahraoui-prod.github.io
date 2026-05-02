@@ -3,400 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تفاصيل الفنان - ZAHRAOUI PROD">
+    <meta name="theme-color" content="#0a0a0a">
     <title>تفاصيل الفنان - ZAHRAOUI PROD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .navbar {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-
-        .navbar-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-box {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #00d4ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            color: #00d4ff;
-            font-size: 12px;
-        }
-
-        .navbar-logo h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            color: #00d4ff;
-            font-size: 18px;
-            letter-spacing: 0.1em;
-        }
-
-        .navbar-logo p {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 10px;
-            color: rgba(0, 212, 255, 0.7);
-            margin-top: -5px;
-        }
-
-        .navbar-links a {
-            color: #a0a0a0;
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 2rem;
-            transition: color 0.3s;
-        }
-
-        .navbar-links a:hover {
-            color: #00d4ff;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #00d4ff;
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 2rem;
-            transition: color 0.3s;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .back-link:hover {
-            color: #00a8cc;
-        }
-
-        .artist-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-            align-items: center;
-        }
-
-        .artist-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: rgba(0, 212, 255, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .artist-image::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.15),
-                rgba(0, 0, 0, 0.15) 1px,
-                transparent 1px,
-                transparent 2px
-            );
-            pointer-events: none;
-        }
-
-        .artist-info h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .artist-genre {
-            font-family: 'Orbitron', sans-serif;
-            color: #00d4ff;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 0.1em;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-
-        .artist-description {
-            color: #a0a0a0;
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .artist-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            padding: 1.5rem;
-            text-align: center;
-            background: rgba(26, 26, 46, 0.5);
-        }
-
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
-            font-weight: bold;
-            color: #00d4ff;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: rgba(0, 212, 255, 0.7);
-            margin-top: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .works-section {
-            margin-top: 4rem;
-            padding-top: 4rem;
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 2rem;
-        }
-
-        .section-title span {
-            color: #00d4ff;
-        }
-
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .work-card {
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            background: rgba(26, 26, 46, 0.5);
-            padding: 1.5rem;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .work-card:hover {
-            border-color: rgba(0, 212, 255, 0.6);
-            background: rgba(26, 26, 46, 0.8);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-        }
-
-        .work-title {
-            font-family: 'Orbitron', sans-serif;
-            color: #00d4ff;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .work-date {
-            font-size: 12px;
-            color: rgba(0, 212, 255, 0.7);
-        }
-
-        .footer {
-            background: #000000;
-            border-top: 1px solid rgba(0, 212, 255, 0.2);
-            padding: 2rem;
-            margin-top: 4rem;
-            text-align: center;
-            color: #808080;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .artist-header {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .artist-info h1 {
-                font-size: 32px;
-            }
-
-            .artist-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .navbar-links {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-logo">
+            <a href="index.html" class="navbar-logo">
                 <div class="logo-box">ZP</div>
                 <div>
                     <h1>ZAHRAOUI</h1>
                     <p>PROD</p>
                 </div>
-            </div>
+            </a>
             <div class="navbar-links">
-                <a href="/">الرئيسية</a>
-                <a href="/#artists">الفنانون</a>
-                <a href="/#works">الأعمال</a>
-                <a href="/#contact">تواصل معنا</a>
+                <a href="index.html">الرئيسية</a>
+                <a href="artists.html">الفنانون</a>
+                <a href="works.html">الأعمال</a>
+                <a href="contact.html">تواصل معنا</a>
             </div>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <a href="/" class="back-link">← العودة للرئيسية</a>
-
-        <!-- Artist Header -->
-        <div class="artist-header">
-            <div class="artist-image">
-                صورة الفنان
-            </div>
-            <div class="artist-info">
-                <h1 id="artistName">مصطفى زيان</h1>
-                <div class="artist-genre" id="artistGenre">موسيقى عربية معاصرة</div>
-                <p class="artist-description" id="artistDescription">
-                    فنان موهوب متخصص في دمج الأصوات التقليدية مع الإيقاعات الحديثة. يتمتع بخبرة واسعة في الموسيقى والإنتاج الموسيقي، ويعمل مع ZAHRAOUI PROD لتوزيع أعماله على المستوى العالمي.
-                </p>
-
-                <div class="artist-stats">
-                    <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">أغنية</div>
+    <!-- Artist Header -->
+    <section class="section-darker" style="padding: 3rem 0;">
+        <div class="container">
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                <!-- Artist Image -->
+                <div style="flex: 1; min-width: 250px;">
+                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #00d4ff 0%, #1a0033 100%); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                        🎤
                     </div>
-                    <div class="stat">
-                        <div class="stat-number">2M+</div>
-                        <div class="stat-label">مستمع</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">15</div>
-                        <div class="stat-label">دول</div>
+                </div>
+
+                <!-- Artist Info -->
+                <div style="flex: 1; min-width: 250px;">
+                    <h1 id="artist-name" style="margin-bottom: 0.5rem;">مصطفى زيان</h1>
+                    <p id="artist-genre" style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 1rem;">موسيقى عربية معاصرة</p>
+                    
+                    <p id="artist-bio" style="color: #a0a0a0; font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        فنان موهوب متخصص في دمج الأصوات التقليدية مع الإيقاعات الحديثة. يتمتع بخبرة واسعة في الموسيقى العربية المعاصرة.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn btn-primary">تواصل معنا</a>
+                        <a href="artists.html" class="btn">العودة للفنانين</a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Works Section -->
-        <div class="works-section">
-            <h2 class="section-title">أحدث <span>الأعمال</span></h2>
-            <div class="works-grid">
-                <div class="work-card">
-                    <div class="work-title">موسيقى الروح</div>
-                    <div class="work-date">2024</div>
+    <!-- Artist Stats -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">50+</h3>
+                        <p style="color: #a0a0a0;">أغنية</p>
+                    </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-title">ليل المغرب</div>
-                    <div class="work-date">2024</div>
+
+                <div class="card">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">1M+</h3>
+                        <p style="color: #a0a0a0;">مستمع</p>
+                    </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-title">أحلام الشرق</div>
-                    <div class="work-date">2023</div>
+
+                <div class="card">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">5M+</h3>
+                        <p style="color: #a0a0a0;">تشغيل</p>
+                    </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-title">صوت القلب</div>
-                    <div class="work-date">2023</div>
+
+                <div class="card">
+                    <div class="card-content" style="text-align: center;">
+                        <h3 style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">2020</h3>
+                        <p style="color: #a0a0a0;">سنة الانضمام</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Artist Works -->
+    <section class="section-darker">
+        <div class="container">
+            <div class="section-header">
+                <h2>أحدث <span class="highlight">الأعمال</span></h2>
+                <p>مجموعة من أفضل أعمال الفنان</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00d4ff 0%, #1a0033 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎵</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">موسيقى الروح</h3>
+                        <p class="card-subtitle">2023</p>
+                        <p class="card-description">أغنية عاطفية تجمع بين الأصوات التقليدية والحديثة</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #1a0033 0%, #00d4ff 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎧</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">ليل المغرب</h3>
+                        <p class="card-subtitle">2023</p>
+                        <p class="card-description">أغنية رومانسية تحت نجوم المغرب</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #00a8cc 0%, #1a0033 100%); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 3rem;">🎹</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">أحلام المدينة</h3>
+                        <p class="card-subtitle">2022</p>
+                        <p class="card-description">موسيقى معاصرة تعبر عن حياة المدينة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-dark">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div class="card-content">
+                        <h2 style="margin-bottom: 1.5rem;">عن <span class="highlight">الفنان</span></h2>
+                        
+                        <h3 style="color: var(--accent-cyan); margin-top: 1.5rem; margin-bottom: 0.5rem;">السيرة الذاتية</h3>
+                        <p style="color: #a0a0a0; line-height: 1.8; margin-bottom: 1rem;">
+                            مصطفى زيان هو فنان موهوب متخصص في الموسيقى العربية المعاصرة. بدأ مسيرته الموسيقية في عام 2020 وسرعان ما أصبح من أشهر الفنانين في المغرب.
+                        </p>
+
+                        <h3 style="color: var(--accent-cyan); margin-top: 1.5rem; margin-bottom: 0.5rem;">الإنجازات</h3>
+                        <ul style="color: #a0a0a0; line-height: 1.8; margin-bottom: 1rem; padding-right: 1.5rem;">
+                            <li>أكثر من 50 أغنية منشورة</li>
+                            <li>أكثر من 5 ملايين تشغيل على منصات البث</li>
+                            <li>مليون مستمع نشط</li>
+                            <li>عدة جوائز وتكريمات موسيقية</li>
+                        </ul>
+
+                        <h3 style="color: var(--accent-cyan); margin-top: 1.5rem; margin-bottom: 0.5rem;">الأسلوب الموسيقي</h3>
+                        <p style="color: #a0a0a0; line-height: 1.8;">
+                            يتميز أسلوب مصطفى زيان بدمج الأصوات التقليدية المغربية مع الإيقاعات الحديثة والتكنولوجيا الموسيقية المتقدمة، مما ينتج عنه موسيقى فريدة وجذابة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2024 ZAHRAOUI PROD. جميع الحقوق محفوظة.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الموقع</h3>
+                    <p style="color: #a0a0a0; font-size: 14px;">
+                        ZAHRAOUI PROD توفر خدمات احترافية لتوزيع الموسيقى وإدارة الحقوق الرقمية للمواهب المغربية.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="artists.html">الفنانون</a></li>
+                        <li><a href="works.html">الأعمال</a></li>
+                        <li><a href="contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>الخدمات</h3>
+                    <ul>
+                        <li><a href="#">التوزيع الموسيقي</a></li>
+                        <li><a href="#">إدارة الحقوق</a></li>
+                        <li><a href="#">YouTube Content ID</a></li>
+                        <li><a href="#">التمثيل القانوني</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>تواصل</h3>
+                    <ul>
+                        <li><a href="mailto:info@zahraoui-prod.com">info@zahraoui-prod.com</a></li>
+                        <li><a href="tel:+212">+212 (0) 5XX-XXXXXX</a></li>
+                        <li>الرباط، المغرب</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 ZAHRAOUI PROD. جميع الحقوق محفوظة.</p>
+                <div class="footer-links">
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">شروط الاستخدام</a>
+                    <a href="#">الشروط والأحكام</a>
+                </div>
+                <a href="index.html" class="footer-scroll-top">↑ العودة للأعلى ↑</a>
+            </div>
+        </div>
     </footer>
 
-    <script>
-        // Get artist ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const artistId = urlParams.get('id') || '1';
-
-        // Artist data
-        const artists = {
-            1: {
-                name: "مصطفى زيان",
-                genre: "موسيقى عربية معاصرة",
-                description: "فنان موهوب متخصص في دمج الأصوات التقليدية مع الإيقاعات الحديثة. يتمتع بخبرة واسعة في الموسيقى والإنتاج الموسيقي، ويعمل مع ZAHRAOUI PROD لتوزيع أعماله على المستوى العالمي.",
-            },
-            2: {
-                name: "أحمد شروق",
-                genre: "راب و هيب هوب",
-                description: "مغني ومنتج موسيقي متميز يجمع بين الكلمات القوية والألحان الجذابة. متخصص في إنتاج موسيقى الراب والهيب هوب بأسلوب مميز يعكس الواقع الاجتماعي.",
-            },
-            3: {
-                name: "ليلى الأطلسية",
-                genre: "موسيقى إلكترونية",
-                description: "منتجة موسيقية رائدة في مجال الموسيقى الإلكترونية بالمغرب. تجمع بين التكنولوجيا والإبداع لإنتاج موسيقى فريدة وجذابة.",
-            },
-            4: {
-                name: "محمد الصحراوي",
-                genre: "موسيقى تقليدية",
-                description: "عازف عود وموسيقار متخصص في الموسيقى التقليدية المغربية. يحافظ على التراث الموسيقي الأصيل مع إضافة لمسات عصرية.",
-            },
-        };
-
-        const artist = artists[artistId] || artists[1];
-
-        document.getElementById('artistName').textContent = artist.name;
-        document.getElementById('artistGenre').textContent = artist.genre;
-        document.getElementById('artistDescription').textContent = artist.description;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
