@@ -341,11 +341,11 @@ function updateSocialLinks(social) {
   if (!socialContainer) return;
   
   const platforms = [
-    { key: 'facebook', icon: '📘', label: 'Facebook' },
-    { key: 'instagram', icon: '📷', label: 'Instagram' },
-    { key: 'tiktok', icon: '🎵', label: 'TikTok' },
-    { key: 'youtube', icon: '▶️', label: 'YouTube' },
-    { key: 'linktree', icon: '🔗', label: 'Linktree' }
+    { key: 'facebook', icon: 'fab fa-facebook-f', label: 'Facebook' },
+    { key: 'instagram', icon: 'fab fa-instagram', label: 'Instagram' },
+    { key: 'tiktok', icon: 'fab fa-tiktok', label: 'TikTok' },
+    { key: 'youtube', icon: 'fab fa-youtube', label: 'YouTube' },
+    { key: 'linktree', icon: 'fas fa-link', label: 'Linktree' }
   ];
   
   socialContainer.innerHTML = '';
@@ -359,28 +359,34 @@ function updateSocialLinks(social) {
       link.rel = 'noopener noreferrer';
       link.title = platform.label;
       link.style.cssText = `
-        width: 48px;
-        height: 48px;
-        border: 1px solid rgba(0, 212, 255, 0.5);
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(0, 212, 255, 0.6);
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 2px;
         color: var(--accent-cyan);
         text-decoration: none;
-        transition: all 0.3s;
-        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        font-size: 1.3rem;
       `;
-      link.textContent = platform.icon;
+      
+      // Create icon element
+      const icon = document.createElement('i');
+      icon.className = platform.icon;
+      link.appendChild(icon);
       
       // Hover effect
       link.addEventListener('mouseover', () => {
         link.style.borderColor = 'var(--accent-cyan)';
-        link.style.boxShadow = '0 0 10px rgba(0, 212, 255, 0.5)';
+        link.style.boxShadow = '0 0 15px rgba(0, 212, 255, 0.7), inset 0 0 15px rgba(0, 212, 255, 0.1)';
+        link.style.backgroundColor = 'rgba(0, 212, 255, 0.1)';
       });
       link.addEventListener('mouseout', () => {
-        link.style.borderColor = 'rgba(0, 212, 255, 0.5)';
+        link.style.borderColor = 'rgba(0, 212, 255, 0.6)';
         link.style.boxShadow = 'none';
+        link.style.backgroundColor = 'transparent';
       });
       
       socialContainer.appendChild(link);
